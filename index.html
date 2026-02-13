@@ -1,43 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Susan's Mystic Match</title>
-<link rel="stylesheet" href="style.css" />
-<link rel="manifest" href="manifest.json" />
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
-}
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Susan's Mystic Match</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<div id="game-container">
-    <div id="header">
-        <img id="susan-portrait" src="assets/susan.png" />
+    <div id="title-screen" class="screen">
         <h1>Susan's Mystic Match</h1>
+        <p class="subtitle">A magical puzzle journey for Susan ✨</p>
+        <button id="start-btn">Start Game</button>
     </div>
 
-    <div id="ui">
-        <div id="level-display">Level 1</div>
-        <div id="moves-display">Moves: 30</div>
-        <div id="score-display">Score: 0</div>
-        <button id="btn-shuffle">Shuffle</button>
-        <button id="btn-hammer">Hammer</button>
-        <button id="btn-wand">Magic Wand</button>
+    <div id="game-screen" class="screen hidden">
+        <h2 id="level-label">Level 1</h2>
+        <div id="grid"></div>
+        <div id="susan"></div>
+        <button id="next-level" class="hidden">Next Level</button>
     </div>
 
-    <canvas id="board" width="400" height="400"></canvas>
-
-    <div id="level-complete" class="hidden">
-        <h2>Level Complete!</h2>
-        <button id="next-level">Next Level</button>
-    </div>
-</div>
-
-<script src="engine/core.js"></script>
-<script src="game.js"></script>
+    <script src="game.js"></script>
 </body>
 </html>
